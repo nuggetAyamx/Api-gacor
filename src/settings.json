@@ -1,0 +1,635 @@
+{
+  "name": "Nugget Api's",
+  "version": "v1.0.0",
+  "description": "Simple and Easy-to-Use API Documentation",
+  "header": {
+    "status": "Aktif!",
+    "imageSrc": [
+      "https://api.the-nugget.my.id/uploads/file-1781376568120-582278989.jpg"
+    ],
+    "imageSize": {
+      "mobile": "80%",
+      "tablet": "40%",
+      "desktop": "40%"
+    }
+  },
+  "apiSettings": {
+    "creator": "ibnuu"
+  },
+  "links": [
+    {
+      "name": "Channel Informations",
+      "url": "https://t.me/nuggetinformations"
+    },
+    {
+      "name": "Contact Me",
+      "url": "https://t.me/kakekluwh"
+    }
+  ],
+  "categories": [
+      {
+  "name": "TOOLS V2",
+  "items": [
+        {
+      "name": "Web2Zip",
+      "desc": "convert website menjadi file zip",
+      "path": "/tools/web2zip?apikey=uget&url=",
+      "innerDesc": "Parameter:\n- url: alamat website yang mau di convert"
+    },
+      {
+      "name": "OUO Bypass",
+      "desc": "Bypass link shortener ouo.io",
+      "path": "/tools/ouo-bypass?apikey=uget&url=",
+      "innerDesc": "Parameter:\n- url: link ouo.io yang mau dibypass"
+    },
+         {
+      "name": "Lirik Lagu",
+      "desc": "Cari lirik lagu favorit mu",
+      "path": "/tools/lirik?apikey=uget&title=",
+      "innerDesc": "Parameter:\n- title: judul lagu"
+    },
+     {
+          "name": "Upload File",
+          "desc": "Upload file ke server (max 10MB)",
+          "path": "/tools/upload?apikey=uget",
+          "method": "POST",
+          "bodyType": "form-data",
+          "innerDesc": "Pilih file yang mau diupload.\nSupport: Gambar, Video, Audio, Dokumen\nMax size: 10MB"
+        }
+  ]
+},
+      {
+  "name": "Streaming",
+  "items": [
+       {
+      "name": "Nonton Tv",
+      "desc": "Nonton Tv secara live",
+      "path": "/streaming/tv?apikey=uget&channel=",
+      "innerDesc": "Parameter:\n- channel: nama channel (contoh: sctv, rcti, tvOne, indosiar, dll)"
+    },
+      {
+      "name": "LK21 Detail",
+      "desc": "Detail film LK21 (sinopsis, cast, download link)",
+      "path": "/streaming/lk21/detail?apikey=uget&url=",
+      "innerDesc": "Parameter:\n- url: link film dari LK21"
+    },
+    {
+      "name": "LK21 Search",
+      "desc": "Cari film di LK21",
+      "path": "/streaming/lk21/search?apikey=uget&q=",
+      "innerDesc": "Parameter:\n- q: judul film yang dicari"
+    }
+  ]
+ },
+      {
+  "name": "Random Jkt48",
+  "items": [
+    {
+      "name": "Random lagu",
+      "desc": "Get random JKT48 song",
+      "path": "/random/jkt48?apikey=uget"
+    }
+  ]
+},
+      {
+  "name": "MAKER",
+  "items": [
+    {
+      "name": "ATTP",
+      "desc": "Generate an animated ATTP sticker",
+      "path": "/maker/attp?apikey=uget&text="
+    },
+      {
+      "name": "Emoji GIF",
+      "desc": "Get the animated/GIF version of an emoji",
+      "path": "/maker/emojigif?apikey=uget&emoji="
+    }   
+  ]
+},
+    {
+      "name": "AI (Artificial Intelligence)",
+      "items": [           
+           {
+      "name": "Andi Ai",
+      "desc": "Talk with andi Ai",
+      "path": "/ai/andi?apikey=uget&text=",
+      "innerDesc": "Parameter:\n- text: pertanyaan atau pencarian"
+    },         
+        {
+          "name": "Gemini",
+          "desc": "Talk with Gemini ai",
+          "path": "/ai/gemini?prompt="
+        },
+              {
+      "name": "Claude AI",
+      "desc": "Talk with Claude ai",
+      "path": "/ai/claude?apikey=uget&q=",
+      "innerDesc": "Parameter:\n- q: pertanyaan atau pesan untuk Claude"
+    },
+           {
+      "name": "Worm GPT",
+      "desc": "AI tanpa batasan (unrestricted) - bisa menjawab apa saja",
+      "path": "/ai/worm-gpt?apikey=uget&prompt=",
+      "innerDesc": "Parameter:\n- prompt: pertanyaan atau perintah untuk AI\n\n⚠️ Peringatan: AI ini bisa memberikan respons yang kasar, ofensif, atau eksplisit."
+    },
+         {
+      "name": "StarLabs AI",
+      "desc": "Chat with starlabsAi",
+      "path": "/ai/starlabs?apikey=uget&message=",
+      "innerDesc": "Parameter:\n- message: pesan atau pertanyaan untuk AI"
+    },
+          {
+      "name": "Flat AI",
+      "desc": "Chat With FlatAI",
+      "path": "/ai/flatai?apikey=uget&text=",
+      "innerDesc": "Parameter:\n- text: pesan atau pertanyaan untuk AI"
+    },
+             {
+      "name": "Dani AI",
+      "desc": "Chat with Dani",
+      "path": "/ai/dani?apikey=uget&text="
+    },
+    {
+      "name": "Emily AI",
+      "desc": "Chat with Emily",
+      "path": "/ai/emily?apikey=uget&text="
+    },
+    {
+      "name": "Lora AI",
+      "desc": "Chat with Lora",
+      "path": "/ai/lora?apikey=uget&text="
+    },
+           {
+      "name": "Gita AI",
+      "desc": "Chat with Gita AI - wisdom and answers",
+      "path": "/ai/gita?apikey=uget&q="
+    },
+        {
+  "name": "Ribka AI",
+  "desc": "Chat dengan Ribka AI",
+  "path": "/ai/ribkaai?apikey=uget&text="
+},
+        {
+  "name": "AI Chat (AI4Chat)",
+  "desc": "Ai4chat (Text Generation)",
+  "path": "/ai/ai4chat?apikey=uget&q="
+},
+    {
+      "name": "Blackbox AI",
+      "desc": "Chat with blackboxAi",
+      "path": "/ai/blackbox?apikey=uget&q=",
+      "innerDesc": "Parameter:\n- q: pertanyaan atau perintah"
+    },
+     {
+  "name": "DeepSeek R1 AI",
+  "desc": "Chat dengan AI model DeepSeek R1",
+  "path": "/ai/deepseek?apikey=uget&prompt=&system=&temperature="
+}    
+      ]
+    },
+    {
+      "name": "Random",
+      "items": [
+        {
+          "name": "Cecan China",
+          "desc": "Cecan China Random Images",
+          "path": "/random/cecan"
+        },
+        {
+          "name": "Cecan Indo",
+          "desc": "Cecan Indonesia Random Images",
+          "path": "/random/indonesia"
+        },
+        {
+          "name": "Cecan Korea",
+          "desc": "Cecan Korean Random Images",
+          "path": "/random/korea"
+        },
+		  {
+          "name": "Cecan Japan",
+          "desc": "Cecan Japan Random Images",
+          "path": "/random/japan"
+        },
+        {
+          "name": "cecan Random",
+          "desc": "Cecan Random Images",
+          "path": "/random/cecanran"
+        },
+		  {
+          "name": "Cecan Kayes",
+          "desc": "Cecan Kayes Random Images",
+          "path": "/random/kayes",
+          "status": "ready"
+        },
+        {
+          "name": "Blue Archive",
+          "desc": "Blue Archive Random Images",
+          "path": "/random/ba"
+        }
+      ]
+    },
+	  {
+  "name": "Stalker",
+  "items": [
+    {
+      "name": "Tiktok Stalker",
+      "desc": "Stalk profil tiktok",
+      "path": "/stalker/stalktiktok?apikey=uget&username=",
+      "note": "username: username TikTok tanpa @ (contoh: nuggetnih)"
+    },
+     {
+  "name": "GitHub Stalker",
+  "desc": "Lihat informasi profil pengguna GitHub",
+  "path": "/stalker/sgithub?username="
+},
+        {
+      "name": "Free Fire Stalk",
+      "desc": "Cek profil pemain Free Fire (UID)",
+      "path": "/stalker/ff?apikey=uget&uid=",
+      "innerDesc": "Parameter:\n- uid: ID akun Free Fire"
+    },
+  {
+  "name": "YouTube Stalker",
+  "desc": "Lihat informasi channel dan video terbaru YouTube",
+  "path": "/stalker/syoutube?username="
+}    
+  ]
+},
+	  {
+      "name": "Random Cecan V2 (Video)",
+      "items": [
+		  {
+          "name": "Ribka Video",
+          "desc": "Video cecan Ribka random",
+          "path": "/randomv2/ribka"
+        },
+        {
+          "name": "Andin Video",
+          "desc": "Video cecan Andin random",
+          "path": "/randomv2/andin"
+        },
+        {
+          "name": "Amelia Video",
+          "desc": "Video cecan Amelia random",
+          "path": "/randomv2/amelia"
+        },
+        {
+          "name": "Novy Video",
+          "desc": "Video cecan Novy random",
+          "path": "/randomv2/novy"
+        },
+        {
+          "name": "Yaya Video",
+          "desc": "Video cecan Yaya random",
+          "path": "/randomv2/yaya"
+        }
+      ]
+    },
+    {
+      "name": "Downloader",
+      "items": [
+        {
+  "name": "Pinterest Downloader",
+  "desc": "Download media (video/gambar) dari Pinterest",
+  "path": "/download/pindl?apikey=uget&url="
+},
+     {
+  "name": "Google Drive Download",
+  "desc": "Dapatkan direct download link dari file Google Drive publik",
+  "path": "/download/gdrive?url="
+},  
+        {
+          "name": "Instagram Downloader",
+          "desc": "Download Instagram photos/videos",
+          "path": "/download/instagram?apikey=uget&query="
+        },
+      {
+  "name": "GitHub Download",
+  "desc": "Ambil data dari URL GitHub (repo, file, raw, atau gist) secara terstruktur.",
+  "path": "/download/github?url="
+},  
+     {
+  "name": "Terabox Downloader",
+  "desc": "Download files from terabox",
+  "path": "/download/terabox?apikey=uget&url="  
+},  
+        {
+          "name": "Tiktok Downloader",
+          "desc": "Download Tiktok photos/videos",
+          "path": "/download/tiktok?apikey=uget&url="
+        }
+      ]
+    },
+    {
+      "name": "Canvas",
+      "items": [
+		 {
+          "name": "IQC Chat",
+          "desc": "Membuat gambar chat iPhone Quote",
+          "path": "/canvas/iqc?text=&chatTime=&statusBarTime="
+          },
+          {
+      "name": "Fake Story",
+      "desc": "Generate fake Instagram story image",
+      "path": "/canvas/fakestory?apikey=uget&name=&text=&url="
+    },
+        {
+  "name": "Security Card",
+  "desc": "Generate a security suspect card using URL parameters",
+  "path": "/canvas/security?avatar=&background=&createdTimestamp=&suspectTimestamp=&locale="
+}, 
+        {
+  "name": "Goodbye Card V5",
+  "desc": "Generate a stylized goodbye image (version 5) via URL parameters.",
+  "path": "/canvas/goodbye-v5?apikey=uget&username=&guildName=&memberCount=&avatar=&background=&quality="
+}, 
+      {
+      "name": "Carbon",
+      "desc": "Carbon code image",
+      "path": "/canvas/carbon?apikey=uget&text="
+    },    
+        {
+          "name": "BratV1",
+          "desc": "Brat generator",
+          "path": "/canvas/bratv1?apikey=uget&text="
+        }
+      ]
+    },
+	  {
+  "name": "Games",
+  "items": [
+    {
+      "name": "Pilihan Ganda",
+      "desc": "Dapatkan soal kuis pilihan ganda acak",
+      "path": "/games/pilihanganda?apikey=uget",
+      "note": "Mengembalikan satu soal kuis pilihan ganda beserta jawabannya."
+    },
+      {
+  "name": "Tebak Kartun",
+  "desc": "Tebak Kartun anak anak",
+  "path": "/games/tebakkartun?apikey=uget"
+},
+     {
+  "name": "Maths Game",
+  "desc": "Generates a random math problem based on a specified difficulty level",
+  "path": "/games/maths?apikey=uget&level="
+},
+    {
+      "name": "Tebak Kata", 
+      "desc": "Dapatkan soal tebak kata acak",
+      "path": "/games/tebakkata?apikey=uget",
+      "note": "Mengembalikan soal tebak kata beserta jawabannya."
+    }
+  ]
+},
+    {
+      "name": "Tools Gambar",
+      "items": [         
+     {
+  "name": "Remove Background",
+  "desc": "Hapus background gambar otomatis pakai AI",
+  "path": "/aigambar/removebg?apikey=uget&imageUrl="
+},        
+       {
+  "name": "Text to Image AI",
+  "desc": "Generate gambar dari deskripsi teks menggunakan AI",
+  "path": "/aigambar/text2img?apikey=uget&text=",
+  "note": "text: deskripsi gambar yang ingin dibuat (contoh: seorang anak sedang memakan es krim di pinggir danau)"
+},
+       {
+  "name": "AI Image Generator",
+  "desc": "Generate image from text description using AI",
+  "path": "/aigambar/gptimage?apikey=uget&text=",
+  "note": "text: deskripsi gambar yang ingin dibuat (contoh: seorang anak sedang memakan es krim di pinggir danau)"
+},
+        {
+          "name": "Penjernih Gambar",
+          "desc": "HD v1",
+          "path": "/aigambar/hd?apikey=uget&imageUrl="
+        }
+      ]
+    },
+	  {
+		"name": "Berita",
+       "items": [  
+        {
+  "name": "CNN Indonesia News",
+  "desc": "Get latest news from CNN Indonesia",
+  "path": "/berita/cnn?apikey=uget&limit="
+		},
+       {
+  "name": "BBC News",
+  "desc": "Berita terbaru dari BBC News",
+  "path": "/berita/bbc?apikey=uget&limit="
+},  
+     {
+  "name": "Buguruku News",
+  "desc": "Dapatkan berita terbaru dari Buguruku",
+ "path": "/berita/buguruku?apikey=uget&limit="
+},     
+    {
+  "name": "Live Score Sepak Bola",
+  "desc": "Skor pertandingan sepak bola live dari livescore",
+  "path": "/berita/livescore?apikey=uget&limit="
+},       
+		 {
+  "name": "Google News",
+  "desc": "Get trending news from Google News Indonesia",
+  "path": "/berita/googlenews?apikey=uget&limit="
+		 },
+		  {
+  "name": "Tribun News",
+  "desc": "Get latest news from Tribun News",
+  "path": "/berita/tribun?apikey=uget&limit="
+        }
+      ]
+    },
+    {
+      "name": "Tools",
+      "items": [
+        {
+          "name": "URL Shortener",
+          "desc": "Shorten long URLs using TinyURL",
+          "path": "/tools/shortlink?apikey=uget&url=",
+          "note": "Masukkan URL lengkap yang ingin dipendekkan"
+        },           
+     {
+      "name": "OCR",
+      "desc": "Extract text from image (Optical Character Recognition)",
+      "path": "/tools/ocr?apikey=uget&imgUrl="
+    },
+       {
+  "name": "Subdomain Scanner",
+  "desc": "Discovers subdomains associated with a given root domain via certificate transparency logs",
+  "path": "/tools/subdomains?domain="
+    },
+         
+     {
+  "name": "Country Info",
+  "desc": "Informasi lengkap tentang suatu negara",
+  "path": "/tools/country?name=",
+  "note": "name: nama negara (contoh: malaysia, indonesia, jepang)"
+},    
+		  {
+  "name": "NGL Spam",
+  "desc": "Spam NGL anonymously",
+  "path": "/tools/nglspam?apikey=uget&target=&message=&count=",
+  "note": "target: username NGL atau link ngl.link\nmessage: pesan yang ingin dikirim\ncount: jumlah spam (max 20)"
+},
+      {
+  "name": "Screenshot Website",
+  "desc": "Ambil screenshot dari website (langsung gambar)",
+  "path": "/tools/ssweb?url=&device=&theme=&fullPage="
+},  
+        {
+          "name": "IMEI Checker",
+          "desc": "Cek informasi perangkat berdasarkan IMEI",
+          "path": "/tools/cekimei?q=",
+          "status": "ready",
+          "params": {
+            "q": "Nomor IMEI (wajib)"
+          }
+        }
+      ]
+    },
+        {
+      "name": "Anime",
+      "items": [
+        {
+  "name": "Anime Ongoing",
+  "desc": "Dapatkan daftar anime yang sedang tayang",
+  "path": "/anime/ongoing?apikey=uget&limit=",
+  "note": "limit: jumlah anime yang ditampilkan (default 20)"
+},
+     {
+  "name": "Anichin Popular",
+  "desc": "Daftar donghua populer dari Anichin",
+  "path": "/anime/anichin-popular?apikey=uget"
+}, 
+     {
+  "name": "Anichin Download",
+  "desc": "Extract download links for various resolutions from an Anichin anime detail page",
+  "path": "/anime/anichin-download?url="
+},    
+     {
+  "name": "Anichin Latest",
+  "desc": "Episode terbaru dari Anichin",
+  "path": "/anime/anichin-latest"
+},   
+     {
+  "name": "Anichin Search",
+  "desc": "Cari Donghua dari Anichin",
+  "path": "/anime/anichin-search?q="
+},   
+        {
+  "name": "Anichin Detail",
+  "desc": "Detail episode Donghua dari Anichin",
+  "path": "/anime/anichin-detail?apikey=uget&url="
+},  
+     {
+  "name": "Anichin Episodes",
+  "desc": "Daftar episode Donghua dari Anichin",
+  "path": "/anime/anichin-episodes?apikey=uget&url=&limit="
+},   
+        {
+  "name": "Anime Schedule",
+  "desc": "Jadwal rilis anime per hari (Indonesia)",
+  "path": "/anime/schedule?apikey=uget&day=",
+  "note": "day: (opsional) filter berdasarkan hari (Senin, Selasa, Rabu, Kamis, Jumat, Sabtu, Minggu).\nContoh: /anime/schedule?apikey=uget&day=senin"
+},
+        {
+  "name": "Anime Detail",
+  "desc": "Detail lengkap anime berdasarkan slug",
+  "path": "/anime/detail?apikey=uget&slug=",
+  "note": "slug: ID unik anime (contoh: enen-shouboutai-season-3-p2-sub-indo)"
+},
+        {
+  "name": "Anime Completed",
+  "desc": "Daftar anime yang sudah tamat (complete)",
+  "path": "/anime/completed?apikey=uget&page=&limit=",
+  "note": "page: nomor halaman (default 1)\nlimit: jumlah anime per halaman (default 20)"
+}  
+      ]
+    },
+    {
+      "name": "Search Tools",
+      "items": [
+		 {
+  "name": "Pinterest Search",
+  "desc": "Search images from Pinterest",
+  "path": "/search/pinterest?apikey=uget&q=&limit=",
+  "note": "q: kata kunci pencarian (contoh: nina tutachia)\nlimit: jumlah hasil gambar (opsional, default 10)"
+},
+        {
+          "name": "Google Image Search",
+          "desc": "Search images from Google",
+          "path": "/search/gimage?apikey=uget&q="
+        },
+		  {
+  "name": "NPM Search",
+  "desc": "Search packages from NPM registry",
+  "path": "/search/npm?apikey=uget&q="
+},
+		  {
+  "name": "Lyrics Search",
+  "desc": "Search song lyrics",
+  "path": "/search/lyrics?apikey=uget&q="
+		  },
+		{
+  "name": "SoundCloud Search",
+  "desc": "Search Music on SoundCloud",
+  "path": "/search/soundcloud?apikey=uget&q=",
+  "note": "q: judul lagu atau artis (contoh: takkan terganti)"
+},
+		  {
+  "name": "Spotify Search",
+  "desc": "Search Music on spotify",
+  "path": "/search/spotifys?apikey=uget&q=",
+  "note": "q: judul lagu atau artis (contoh: takkan terganti)"
+},
+		  {
+  "name": "TikTok Search",
+  "desc": "Search videos from TikTok",
+  "path": "/search/tiktoks?apikey=uget&q="
+	  },
+		  {
+  "name": "YouTube Play",
+  "desc": "Play Music On Youtube",
+  "path": "/search/ytplay?apikey=uget&q="
+},
+     {
+  "name": "Minecraft Search",
+  "desc": "Cari mod, shader, texture pack Minecraft PE",
+  "path": "/search/mcpedl?q=&limit="
+},
+   {
+  "name": "Resep Masakan",
+  "desc": "Cari resep masakan berdasarkan kata kunci",
+  "path": "/search/resep?q=&limit="
+},  
+    {
+  "name": "Bstation Search",
+  "desc": "Cari video anime, film, atau konten dari Bstation",
+  "path": "/search/bstation?q=&apikey="
+}, 
+         {
+      "name": "Apple Music",
+      "desc": "Cari lagu/artis/album di Apple Music",
+      "path": "/search/applemusic?apikey=uget&q=",
+      "innerDesc": "Parameter:\n- q: judul lagu, nama artis, atau album\n- region: kode negara (opsional, default: id)"
+    },
+          {
+      "name": "HappyMod",
+      "desc": "temukan apk mod via happyMod",
+      "path": "/search/happymod?apikey=uget&q=",
+      "innerDesc": "Parameter:\n- q: keyword aplikasi/game yang dicari"
+    },  
+        {
+          "name": "YouTube",
+          "desc": "Video search",
+          "path": "/search/youtube?q="
+        }
+      ]
+    }
+  ]
+}
