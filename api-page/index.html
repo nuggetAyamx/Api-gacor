@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>NUGGET REST API'S</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #fbfbf9;
+            --bg-secondary: #ffffff;
+            --surface: #ffffff;
+            --surface-elevated: #fafaf8;
+            --text-primary: #171717;
+            --text-secondary: #52525b;
+            --text-tertiary: #a1a1aa;
+            --border-light: #e4e4e7;
+            --border-medium: #d4d4d8;
+            --accent: #ff477e;
+            --accent-soft: #ffe4ec;
+            --accent-blue: #3b82f6;
+            --accent-blue-soft: #eff6ff;
+            --accent-purple: #8b5cf6;
+            --accent-purple-soft: #f5f3ff;
+            --accent-green: #10b981;
+            --accent-green-soft: #ecfdf5;
+            --accent-yellow: #f59e0b;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            --shadow-lg: 0 12px 20px -8px rgba(0, 0, 0, 0.08);
+            --shadow-xl: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --radius-full: 9999px;
+        }
+
+        body {
+            font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .loader {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-ring {
+            width: 48px;
+            height: 48px;
+            border: 3px solid var(--border-medium);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            font-weight: 500;
+            color: var(--text-secondary);
+            letter-spacing: -0.2px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            display: none;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-soft);
+            color: var(--accent);
+            padding: 0.3rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(2px);
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--surface);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            padding: 0.4rem 1.2rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .profile-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .profile-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 1rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: var(--radius-md);
+            object-fit: cover;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        .section {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.2s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .section-header i {
+            font-size: 1.6rem;
+            color: var(--accent);
+            background: var(--accent-soft);
+            padding: 0.5rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1rem;
+        }
+
+        .btn-modern {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 1.2rem;
+            background: var(--surface);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s;
+            box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-modern i {
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+
+        .btn-modern:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
+            background: white;
+        }
+
+        .btn-modern:hover i {
+            transform: scale(1.05);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .btn-primary i {
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #e63e6e;
+            border-color: #e63e6e;
+        }
+
+        .btn-outline {
+            background: transparent;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-light);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.2rem;
+            }
+            .section {
+                padding: 1.3rem;
+            }
+            .button-grid {
+                grid-template-columns: 1fr;
+            }
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-light);
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="loader" id="loader">
+    <div class="loader-content">
+        <div class="loader-ring"></div>
+        <p class="loader-text">NUGGET API</p>
+    </div>
+</div>
+
+<div class="container" id="mainContainer">
+    
+    <div class="hero">
+        <div class="badge">
+            <i class="fas fa-bolt"></i> REST API GATEWAY
+        </div>
+        <h1>NUGGET<br>REST API'S</h1>
+        <p class="hero-sub">Simple, fast, and reliable REST API platform.</p>
+        <div class="hero-tag">
+            <i class="fas fa-shield-alt"></i> 99.9% uptime
+        </div>
+    </div>
+
+    <div class="profile-wrapper">
+        <div class="profile-card">
+            <img src="https://files.catbox.moe/mc5s2z.jpeg" alt="Nugget Profile" class="avatar" loading="eager">
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <i class="fas fa-chart-line"></i>
+            <h2>Platform Stats</h2>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">10M+</div>
+                <div class="stat-label">API Calls</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">Uptime</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">&lt;50ms</div>
+                <div class="stat-label">Avg Response</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <i class="fas fa-rocket"></i>
+            <h2>Quick Access</h2>
+        </div>
+        <div class="button-grid">
+            <a href="https://t.me/xugget" target="_blank" rel="noopener" class="btn-modern">
+                <i class="fab fa-telegram"></i> Telegram Saya
+            </a>
+            <a href="/tikget" class="btn-modern btn-primary">
+                <i class="fab fa-tiktok"></i> TikTok Downloader
+            </a>
+            <a href="/jkt48live" class="btn-modern btn-primary">
+                <i class="fas fa-video"></i> Streaming JKT48
+            </a>
+            <a href="https://t.me/nuggetxnasgor" target="_blank" rel="noopener" class="btn-modern">
+                <i class="fas fa-bell"></i> Channel Updates
+            </a>
+            <a href="/docu" class="btn-modern btn-outline">
+                <i class="fas fa-book-open"></i> Documentation
+            </a>
+        </div>
+        <hr>
+        <div class="text-center mt-2">
+            <span style="font-size: 0.75rem; color: var(--text-tertiary);">
+                <i class="fas fa-code-branch"></i> FAST & FREE
+            </span>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const loaderEl = document.getElementById('loader');
+        const mainContainer = document.getElementById('mainContainer');
+        
+        if (!loaderEl || !mainContainer) return;
+
+        const hideLoader = () => {
+            loaderEl.style.opacity = '0';
+            loaderEl.style.visibility = 'hidden';
+            setTimeout(() => {
+                loaderEl.style.display = 'none';
+                mainContainer.style.display = 'block';
+            }, 400);
+        };
+
+        if (document.readyState === 'loading') {
+            window.addEventListener('DOMContentLoaded', hideLoader);
+        } else {
+            hideLoader();
+        }
+
+        const img = document.querySelector('.avatar');
+        if (img) {
+            img.addEventListener('error', () => {
+                img.src = 'https://ui-avatars.com/api/?background=ff477e&color=fff&bold=true&fontsize=0.70&name=NUGGET';
+            });
+        }
+    })();
+</script>
+</body>
+</html>
