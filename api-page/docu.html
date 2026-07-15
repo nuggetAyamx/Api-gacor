@@ -15,7 +15,7 @@
             <div class="spinner-border text-dark mb-2" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
-            <p>Waitt...</p>
+            <p>Tunggu Sebentar...</p>
         </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -38,7 +38,7 @@
         <div class="tab-content" id="apiContent"></div>
     </div>
     <div class="modal fade" id="apiResponseModal" tabindex="-1" aria-labelledby="apiResponseModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" id="modalDialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" id="modalDialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <div>
@@ -48,17 +48,23 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <pre id="apiEndpoint" style="background-color: #f8f9fa; padding: 10px; border-radius: 5px;"></pre>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <strong>Endpoint:</strong>
+                        <button id="copyResponseBtn" class="btn btn-sm btn-outline-secondary d-none">📋 Copy Response</button>
+                    </div>
+                    <pre id="apiEndpoint" style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; font-size: 12px; white-space: pre-wrap; word-break: break-all;"></pre>
                     <div id="apiQueryInputContainer"></div>
                     <div id="apiResponseLoading" class="d-none d-flex justify-content-center align-items-center" style="height: 100px;">
                         <div class="spinner-border custom-spinner" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
                     </div>
-                    <pre id="apiResponseContent" class="d-none mt-2" style="background-color: #f8f9fa; padding: 10px; border-radius: 5px;"></pre>
+                    <strong>Response:</strong>
+                    <pre id="apiResponseContent" class="d-none mt-2" style="background-color: #1e1e1e; color: #d4d4d4; padding: 10px; border-radius: 5px; font-size: 12px; font-family: monospace; white-space: pre-wrap; word-break: break-all; max-height: 400px; overflow: auto;"></pre>
                 </div>
                 <div class="modal-footer">
-                    <button id="submitQueryBtn" class="btn btn-dark">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="submitQueryBtn" class="btn btn-dark d-none">Submit</button>
                 </div>
             </div>
         </div>
