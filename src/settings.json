@@ -248,8 +248,7 @@
       "path": "/stalker/ff?apikey=uget&uid=",
       "innerDesc": "Parameter:\n- uid: ID akun Free Fire"
     },  
-  {
-     {
+  {     
       "name": "YouTube Stalk",
       "desc": "Stalk profil YouTube (subscribers, views, dll)",
       "path": "/stalker/yt?apikey=uget&username=",
