@@ -254,7 +254,7 @@
       "desc": "Stalk profil YouTube (subscribers, views, dll)",
       "path": "/stalker/yt?apikey=uget&username=",
       "innerDesc": "Parameter:\n- username: username YouTube (contoh: mrbean)"
-  }
+   }	  
   ]
 },
 	  {
