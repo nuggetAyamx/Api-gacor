@@ -247,12 +247,14 @@
       "desc": "Cek profil pemain Free Fire (UID)",
       "path": "/stalker/ff?apikey=uget&uid=",
       "innerDesc": "Parameter:\n- uid: ID akun Free Fire"
-    },
+    },  
   {
-  "name": "YouTube Stalker",
-  "desc": "Lihat informasi channel dan video terbaru YouTube",
-  "path": "/stalker/syoutube?username="
-}    
+     {
+      "name": "YouTube Stalk",
+      "desc": "Stalk profil YouTube (subscribers, views, dll)",
+      "path": "/stalker/yt?apikey=uget&username=",
+      "innerDesc": "Parameter:\n- username: username YouTube (contoh: mrbean)"
+  }
   ]
 },
 	  {
