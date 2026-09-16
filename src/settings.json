@@ -623,7 +623,7 @@
       "name": "CapCut Template",
       "desc": "Cari template video CapCut",
       "path": "/search/capcut?apikey=uget&q=",
-      "innerDesc": "Parameter:\n- q: keyword pencarian\n- size: jumlah hasil (opsional, default: 10)\n- lang: bahasa (opsional, default: en)\n- region: kode region (opsional, default: US)\n\nContoh: /search/capcut?apikey=uget&q=anime&size=10"
+      "innerDesc": "Parameter:\n- q: keyword pencarian"
     },  
         {
           "name": "YouTube",
