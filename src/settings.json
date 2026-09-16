@@ -453,6 +453,18 @@
       "desc": "Extract text from image (Optical Character Recognition)",
       "path": "/tools/ocr?apikey=uget&imgUrl="
     },
+		    {
+      "name": "TempMail Create",
+      "desc": "Bikin email sementara",
+      "path": "/tools/tempmail-create?apikey=uget",
+      "innerDesc": "Tidak butuh parameter tambahan.\n\nHasil: email + token untuk cek inbox."
+    },  
+		    {
+      "name": "TempMail Check",
+      "desc": "Cek inbox email sementara",
+      "path": "/tools/tempmail-check?apikey=uget&token=",
+      "innerDesc": "Parameter:\n- token: token dari tempmail-create\n- retries: jumlah percobaan (opsional, default: 6)\n\nCatatan: Setiap pengecekan menunggu 5 detik."
+    },  
        {
   "name": "Subdomain Scanner",
   "desc": "Discovers subdomains associated with a given root domain via certificate transparency logs",
