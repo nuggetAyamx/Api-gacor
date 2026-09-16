@@ -313,7 +313,13 @@
   "name": "Terabox Downloader",
   "desc": "Download files from terabox",
   "path": "/download/terabox?apikey=uget&url="  
-},  
+}, 
+	    {
+      "name": "Aio Downloaders",
+      "desc": "Download video dari berbagai platform (TikTok, IG, YT, dll)",
+      "path": "/download/getdl?apikey=uget&url=",
+      "innerDesc": "Parameter:\n- url: link video dari platform apapun\n\nSupport: TikTok, Instagram, YouTube, Twitter, Facebook, dll.\n\nContoh: /download/getdl?apikey=uget&url=https://vt.tiktok.com/ZSqJGDDKP/"
+    },	  
         {
           "name": "Tiktok Downloader",
           "desc": "Download Tiktok photos/videos",
